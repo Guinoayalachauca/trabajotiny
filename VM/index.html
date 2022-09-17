@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Virtual Machine</title>
+</head>
+<body>
+    <div id="main" class="container">
+        <br>
+        <div class="row">
+            <br>
+            <br>
+            <div class="col-md-12"><h3>Virtual machine</h3></div>
+            <div class="col-md-9 col-lg-4">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" readonly>
+                        <label class="input-group-append">
+                            <span class="btn btn-info">
+                                <i class="fa fa-folder-open"></i> Abrir<input type="file" style="display: none;" accept=".pcod,.txt">
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 d-lg-none d-block"></div>
+            <div class="col-lg-6 col-md-9">
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">SP</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Sizing example input" id="stackPointer" readonly aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">PC</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Sizing example input" id="programPointer" readonly aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">MP</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Sizing example input" id="markPointer" readonly aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 d-md-none d-block" style="margin-top: 15px;"></div>
+            <div class="col-md-3 col-lg-2"><div id="toolbar-container" class="float-none text-center float-md-right"></div></div>
+            <br>
+            <br>
+            <div class="col-md-12">
+                <div id="alert-container"></div>
+            </div>
+            <div class="col-md-4 table-wrapper-scroll-y">
+                <table id="instructions-container" class="table table-striped header-fixed">
+                    <thead>
+                        <tr class="bg-info text-light">
+                            <th class="sizeNumber">#</th>
+                            <th class="sizeData">Programa</th>
+                        </tr>
+                    </thead>
+                    <tbody id="body-instructions">
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <table id="data-container" class="table table-striped header-fixed">
+                    <thead>
+                    <tr class="bg-info text-light">
+                        <th class="sizeNumber">#</th>
+                        <th class="sizeData">Datos</th>
+                    </tr>
+                    </thead>
+                    <tbody id="body-data">
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <table id="stack-container" class="table table-striped header-fixed">
+                    <thead>
+                    <tr class="bg-info text-light">
+                        <th class="sizeNumber">#</th>
+                        <th class="sizeData">Pila</th>
+                    </tr>
+                    </thead>
+                    <tbody id="body-stack">
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12">
+                <div id="console" class="console">
+                    <div id="console-head" class="console-head">
+                        Salida estandar para instrucción WRI
+                    </div>
+                    <div id="console-body" class="console-body">
+                        >
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script id="template" type="x-tmpl-mustache">
+        <div id="templates">
+            <table>
+                <tr class="instruction" number="{{number}}" >
+                    <td class="sizeNumber">{{number}}</td>
+                    <td class="sizeData">{{line}}</td>
+                </tr>
+            </table>
+            <div id="toolbar" class="btn-group btn-group-toggle" data-toggle="buttons">
+                <button id="start_or_next" class="btn btn-primary"><i class="fa fa-{{start_or_next.icon}}"></i></button>
+                <button id="stop" class="btn btn-danger" {{stop.state}}><i class="fa fa-stop"></i></button>
+                <button id="redo" class="btn btn-success" {{stop.state}}><i class="fa fa-redo"></i></button>
+            </div>
+            <table>
+                <tr class="line">
+                    <td class="sizeNumber">{{number}}</td>
+                    <td class="sizeData">{{value}}</td>
+                </tr>
+            </table>
+        </div>
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mustache.min.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="js/ISA.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

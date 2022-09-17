@@ -1,0 +1,7 @@
+**/build/
+generacion_tiny/ejemplos_temporales/*
+generacion_tiny/salida/*
+generacion_tiny/nbproject/private/
+**/bin
+out/
+VM/env.js
