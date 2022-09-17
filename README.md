@@ -2,7 +2,7 @@
   <img src="https://github.com/Guinoayalachauca/trabajotiny/blob/main/log-sistemas-2.jpg">
 </p>
 
-# Compilador TINY a P-Code y Máquina Virtual para ejecutar P-Code.
+# Compilador TINY  para ejecutar 
 
 ## Compilador
 El compilador está programado en JAVA y hace uso del generador léxico **JFlex** junto con el generador sintáctico **CUP**. Está diseñado de una manera sencilla para el entendimiento básico sobre los compiladores. Este compilador está basado en un compilador Tiny que genera codigo Tiny Machine (TM). 
