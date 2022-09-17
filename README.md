@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="unetLogo.png">
+  <img src="https://github.com/Guinoayalachauca/trabajotiny/blob/main/log-sistemas-2.jpg">
 </p>
 
 # Compilador TINY a P-Code y Máquina Virtual para ejecutar P-Code.
