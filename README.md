@@ -109,8 +109,4 @@ RET     |Instrucción de retorno del procedimiento. Extrae de la pila el valor a
 <br>
 <br>
 
-### Demo
 
-Demostración de la simulación del programa ejemplo ubicado en el repositorio en ``demo/ejemplo.p``
-
-![VM](vm.gif)
