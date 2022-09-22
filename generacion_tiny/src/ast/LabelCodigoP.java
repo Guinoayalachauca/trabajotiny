@@ -7,7 +7,7 @@ package ast;
 
 /**
  *
- * @author loreanaisabel
+ 
  */
 public class LabelCodigoP {
     private int numeroLinea;
